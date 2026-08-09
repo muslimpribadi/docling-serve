@@ -1,0 +1,20 @@
+name: Sync Upstream
+
+on:
+  schedule:
+    - cron: '10 0 * * *'
+      timezone: 'Asia/Jakarta'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-fork:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync upstream branch via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh repo sync ${{ github.repository }} -b main
