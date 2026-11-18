@@ -211,7 +211,6 @@ Docs:
     ```env
     ROCR_VISIBLE_DEVICES=0
     HSA_ENABLE_SDMA=0
-    DOCLING_SERVE_ENABLE_UI=true
     ```
 
     > [!IMPORTANT]
